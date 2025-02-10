@@ -19,13 +19,13 @@ export default function SimpleParallax({ color, children }: { color: string; chi
                 scale,
             }}
             ref={targetRef}
-            className={`md:h-[125vh] min-h-screen ${color}`}
+            className={`md:h-[125vh] min-h-screen ${color} max-w-screen`}
         >
             <motion.div
                 style={{
                     opacity,
                 }}
-                className="flex md:h-3/4 w-screen flex-col items-center justify-center overflow-hidden"
+                className="flex md:h-3/4 w-full flex-col items-center justify-center overflow-hidden"
             >
                 <div className="m-10">
                     {children}
