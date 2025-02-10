@@ -5,11 +5,6 @@ const nextConfig: NextConfig = {
         remotePatterns: [
             {
                 protocol: 'https',
-                hostname: 'img.freepik.com',
-                pathname: '/**',
-            },
-            {
-                protocol: 'https',
                 hostname: 'urbanmaster.cz',
                 pathname: '/**',
             },
