@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
+import type { Metadata } from 'next';
 import { Analytics } from '@vercel/analytics/next';
-import { Aleo } from "next/font/google";
-import "./globals.css";
-import React from "react";
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Aleo } from 'next/font/google';
+import './globals.css';
+import React from 'react';
 
 const aleo = Aleo({
-  subsets: ["latin"],
+  subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-  title: "Filip Král | Portfolio",
-  description: "portfolio",
+  title: 'Filip Král | Portfolio',
+  description: 'portfolio',
 };
 
 export default function RootLayout({
@@ -23,6 +24,7 @@ export default function RootLayout({
       <body className={`${aleo.className} antialiased`}>
         {children}
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
