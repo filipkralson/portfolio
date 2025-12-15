@@ -1,8 +1,9 @@
 'use client';
 
 import React, { useState } from 'react';
-import { SendEmail } from '@/app/actions/contactFormAction';
-import { Motion } from '@/app/ui/motion';
+import { SendEmail } from '@/lib/contactFormAction';
+import { Motion } from '@/components/ui/motion';
+import { useTranslation } from 'react-i18next';
 
 type FormData = {
   email: string;
@@ -11,6 +12,7 @@ type FormData = {
 };
 
 const ContactFormBase = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
     email: '',
     name: '',
@@ -24,35 +26,33 @@ const ContactFormBase = () => {
 
   const handleSubmit = async () => {
     const { name, email, description } = formData;
-    setFormStatus('loading'); // Nastavení stavu na loading při odesílání emailu
+    setFormStatus('loading');
 
     try {
       const response = await SendEmail({ name, email, description });
 
-      if (response?.success) {
-        setFormStatus('success'); // Při úspěchu nastavíme stav na success
+      if (response.success) {
+        setFormStatus('success');
       }
     } catch (error: unknown) {
       if (error instanceof Error) {
-        console.error('Chyba při odesílání emailu:', error.message);
-        setInputErrorMessage(error.message || 'Došlo k chybě.');
+        setInputErrorMessage(error.message || t('contact.terminal.unknownError'));
       } else {
-        console.error('Došlo k neznámé chybě.');
-        setInputErrorMessage('Došlo k neznámé chybě.');
+        setInputErrorMessage(t('contact.terminal.unknownError'));
       }
-      setFormStatus('error'); // Při chybě nastavíme stav na error
+      setFormStatus('error');
     }
   };
 
   const handleEnter = async () => {
     if (!currentInput.trim()) {
-      setInputErrorMessage('Pole nesmí být prázdné.');
+      setInputErrorMessage(t('contact.terminal.emptyError'));
       return;
     }
 
     if (step === 0) {
       if (!currentInput.includes('@')) {
-        setInputErrorMessage("Zadejte platnou emailovou adresu obsahující '@'.");
+        setInputErrorMessage(t('contact.terminal.emailError'));
         return;
       }
       setFormData((prev) => ({ ...prev, email: currentInput }));
@@ -90,33 +90,30 @@ const ContactFormBase = () => {
           <div className="w-3 h-3 bg-yellow-500 rounded-full"></div>
           <div className="w-3 h-3 bg-green-500 rounded-full"></div>
         </div>
-        <p className="md:text-md text-sm text-white">kontaktujte@me.com</p>
+        <p className="md:text-md text-sm text-white">{t('contact.terminal.header')}</p>
       </div>
 
       <div className="bg-gray-400/25 backdrop-blur-sm p-6 w-full shadow-lg">
         <p className="font-bold text-green-700 mb-5">
           client@portfolio:~$ <span className="text-gray-700">./send.sh &#8629;</span>
         </p>
-        <p className="font-bold mb-5">
-          Dobrý den, spustili jste skript pro vyplnění kontaktního formuláře. Pro úspěšné odeslání
-          splňte následující kroky:
-        </p>
+        <p className="font-bold mb-5">{t('contact.terminal.intro')}</p>
         <div className="space-y-4">
           <div>
             <p className={`${formData.email ? 'text-viridian' : 'text-black'}`}>
-              {formData.email ? '' : '1.'} Jako první zadejte Vaši emailovou adresu:
+              {formData.email ? '' : '1.'} {t('contact.terminal.step1')}
             </p>
             {formData.email && <p className="ml-2 text-viridian">✔ {formData.email}</p>}
           </div>
           <div>
             <p className={`${formData.name ? 'text-viridian' : 'text-black'}`}>
-              {formData.name ? '' : '2.'} Dále zadejte Vaše jméno a příjmení:
+              {formData.name ? '' : '2.'} {t('contact.terminal.step2')}
             </p>
             {formData.name && <p className="ml-2 text-viridian">✔ {formData.name}</p>}
           </div>
           <div>
             <p className={`${formData.description ? 'text-viridian' : 'text-black'}`}>
-              {formData.description ? '' : '3.'} A nakonec stručný popis toho, co by Vás zajímalo:
+              {formData.description ? '' : '3.'} {t('contact.terminal.step3')}
             </p>
             {formData.description && <p className="ml-2 text-viridian">✔ {formData.description}</p>}
           </div>
@@ -143,25 +140,23 @@ const ContactFormBase = () => {
                 onKeyDown={(e) => e.key === 'Enter' && handleEnter()} // Handle Enter key
                 className="ml-2 bg-azure focus:outline-none text-gray-700 px-1 md:w-1/2"
               />
-              <p className="ml-2 opacity-50 text-sm">...pro potvrzení zmáčkněte ENTER...</p>
+              <p className="ml-2 opacity-50 text-sm">{t('contact.terminal.enterHint')}</p>
             </div>
           )}
 
           {inputErrorMessage && <p className="text-red-500 text-sm">{inputErrorMessage}</p>}
 
-          {formStatus === 'loading' && <div>Odesílání...</div>}
+          {formStatus === 'loading' && <div>{t('contact.terminal.sending')}</div>}
 
           {formStatus === 'success' && (
             <div className="text-viridian">
-              <p className="font-bold">Děkuji, budu Vás co nejdříve kontaktovat. 🎉</p>
+              <p className="font-bold">{t('contact.terminal.success')}</p>
             </div>
           )}
 
           {formStatus === 'error' && (
             <div className="text-red-500">
-              <p className="font-bold">
-                Došlo k chybě při odesílání zprávy. Zkuste to prosím znovu.
-              </p>
+              <p className="font-bold">{t('contact.terminal.error')}</p>
             </div>
           )}
 
@@ -170,12 +165,12 @@ const ContactFormBase = () => {
               <button
                 onClick={handleSubmit}
                 className="px-4 py-2 bg-cambridgeBlue hover:bg-mintGreen hover:text-gray-700 transition border-viridian border-2 text-white rounded">
-                Odeslat
+                {t('contact.terminal.buttons.submit')}
               </button>
               <button
                 onClick={handleRestart}
                 className="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white border-viridian border-2 rounded">
-                Obnovit
+                {t('contact.terminal.buttons.reset')}
               </button>
             </div>
           )}

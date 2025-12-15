@@ -1,0 +1,93 @@
+{
+  "header": {
+    "my": "Moje",
+    "portfolio": "portfolio..."
+  },
+  "infoCards": {
+    "title": "S čím mohu pomoci...",
+    "web": {
+      "title": "Webová řešení",
+      "description": "Pomůžu Vám při vytváření a udržování webových stránek a aplikací. Mám zkušenosti s návrhem, implementací a nasazením webových řešení na míru. Vzdělávání a profesní seberozvoj je dá se říct mým každodenním chlebem."
+    },
+    "design": {
+      "title": "Design",
+      "description": "Návrhy UI/UX, design log a brandingu mi nikdy nebyly cizí. Cit pro detail se u mě začal projevovat už při prvních projektech na střední škole a dále se prohlubuje. Snažím se vcítit do obyčeného uživatele a předpokládám, co by se mu líbilo nejvíce."
+    },
+    "brainstorming": {
+      "title": "Brainstorming",
+      "description": "Při naší spolupráci budu rád za Váš feedback, nebráním se online, telefonním, tak i osobním schůzkám. Naoplátku Vám pomohu nasměrovat řešení správným směrem a předejít tak chybám."
+    }
+  },
+  "stats": {
+    "education": "Vzdělání",
+    "experience": "Pracovní zkušenosti",
+    "otherProjects": "a další projekty do šuplíku...",
+    "highSchool": {
+      "year": "2017-2021",
+      "text": "VOŠ, OA a SZŠ Domažlice",
+      "details": "Obor: Informační technologie"
+    },
+    "university": {
+      "year": "2021-2024",
+      "text": "Technická univerzita v Liberci",
+      "details": "BC. - Fakulta mechatroniky a mezioborových studií, specializace Aplikovaná informatika"
+    },
+    "job": {
+      "year": "2024 - současnost",
+      "text": "Webový vývojář",
+      "details": "Vývoj převážně backendu."
+    }
+  },
+  "testimonials": {
+    "title": "Recenze klientů",
+    "ecospirit": {
+      "title": "Design, grafika a kompletace eshopu",
+      "description": "Při vytváření nového vzhledu eshopu na platformě upgates jsem potřeboval pomocnou ruku. Design stránek a jejich kompletaci jsem nechal převážně na něm. Výsledky byly již za pár dní. Spolupráci můžu jen doporučit!",
+      "author": {
+        "name": "Jaroslav Fajt",
+        "position": "Majitel eshopů Urban Master a Eco Spirit"
+      },
+      "linkBtn": "Odkaz na eshop"
+    }
+  },
+  "contact": {
+    "terminal": {
+      "header": "kontaktujte@me.com",
+      "intro": "Dobrý den, spustili jste skript pro vyplnění kontaktního formuláře. Pro úspěšné odeslání splňte následující kroky:",
+      "step1": "Jako první zadejte Vaši emailovou adresu:",
+      "step2": "Dále zadejte Vaše jméno a příjmení:",
+      "step3": "A nakonec stručný popis toho, co by Vás zajímalo:",
+      "enterHint": "...pro potvrzení zmáčkněte ENTER...",
+      "emailError": "Zadejte platnou emailovou adresu obsahující '@'.",
+      "emptyError": "Pole nesmí být prázdné.",
+      "success": "Děkuji, budu Vás co nejdříve kontaktovat. 🎉",
+      "error": "Došlo k chybě při odesílání zprávy. Zkuste to prosím znovu.",
+      "unknownError": "Došlo k neznámé chybě.",
+      "sending": "Odesílání...",
+      "buttons": {
+        "submit": "Odeslat",
+        "reset": "Obnovit"
+      }
+    }
+  },
+  "about": {
+    "title": "O mně",
+    "subtitle": "Mohl bych být něco jako...",
+    "roles": [
+      "Frontendový nadšenec.",
+      "Backendový Král ;).",
+      "Designový zedník.",
+      "Databázový hospodář.",
+      "Návrhový vizionář.",
+      "Učenlivý člověk."
+    ],
+    "alt": "Moje krásná fotka"
+  },
+  "logoCarousel": {
+    "title": "O čem něco vím..."
+  },
+  "footer": {
+    "rights": "Všechna práva vyhrazena.",
+    "contact": "Kontakt a sítě"
+  }
+}

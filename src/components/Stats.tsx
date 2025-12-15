@@ -1,28 +1,13 @@
-import { Motion } from '@/app/ui/motion';
+'use client';
+
+import { Motion } from '@/components/ui/motion';
 import { HiOutlineAcademicCap, HiOutlineBriefcase } from 'react-icons/hi';
+import { useTranslation } from 'react-i18next';
 
 type CardProps = {
   year: string;
   text: string;
   details: string;
-};
-
-const highSchool = {
-  year: '2017-2021',
-  text: 'VOŠ, OA a SZŠ Domažlice',
-  details: 'Obor: Informační technologie',
-};
-
-const university = {
-  year: '2021-2024',
-  text: 'Technická univerzita v Liberci',
-  details: 'BC. - Fakulta mechatroniky a mezioborových studií, specializace Aplikovaná informatika',
-};
-
-const job = {
-  year: '2024 - současnost',
-  text: 'Webový vývojář',
-  details: 'Vývoj převážně backendu.',
 };
 
 const CardStats = (props: CardProps) => {
@@ -44,6 +29,26 @@ const CardStats = (props: CardProps) => {
 };
 
 export default function Stats() {
+  const { t } = useTranslation();
+
+  const highSchool = {
+    year: t('stats.highSchool.year'),
+    text: t('stats.highSchool.text'),
+    details: t('stats.highSchool.details'),
+  };
+
+  const university = {
+    year: t('stats.university.year'),
+    text: t('stats.university.text'),
+    details: t('stats.university.details'),
+  };
+
+  const job = {
+    year: t('stats.job.year'),
+    text: t('stats.job.text'),
+    details: t('stats.job.details'),
+  };
+
   return (
     <section className="relative w-full flex flex-col md:flex-row items-start justify-center gap-20">
       <div className="flex flex-col items-center justify-center gap-10">
@@ -51,7 +56,9 @@ export default function Stats() {
           <HiOutlineAcademicCap className="text-9xl text-mintGreen bg-viridian rounded-full p-5" />
         </Motion>
         <Motion direction="right" duration={0.3} delay={0.2}>
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-viridian">Vzdělání</h2>
+          <h2 className="text-4xl md:text-6xl font-bold text-center text-viridian">
+            {t('stats.education')}
+          </h2>
         </Motion>
 
         <div className="flex flex-col gap-8 w-full">
@@ -71,7 +78,7 @@ export default function Stats() {
         </Motion>
         <Motion direction="left" duration={0.3} delay={0.2}>
           <h2 className="text-4xl md:text-6xl font-bold text-center text-viridian">
-            Pracovní zkušenosti
+            {t('stats.experience')}
           </h2>
         </Motion>
         <div className="flex flex-col gap-8 w-full">
@@ -79,7 +86,7 @@ export default function Stats() {
             <CardStats year={job.year} text={job.text} details={job.details} />
           </Motion>
           <Motion direction="left" duration={0.3} delay={0.4}>
-            <p className="text-viridian font-bold pl-5">a další projekty do šuplíku...</p>
+            <p className="text-viridian font-bold pl-5">{t('stats.otherProjects')}</p>
           </Motion>
         </div>
       </div>

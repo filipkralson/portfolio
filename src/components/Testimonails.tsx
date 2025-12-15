@@ -5,27 +5,29 @@ import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaArrowLeft, FaArrowRight, FaExternalLinkAlt } from 'react-icons/fa';
 import Link from 'next/link';
-import { Motion } from '@/app/ui/motion';
-
-const ecospirit = {
-  title: 'Design, grafika a kompletace eshopu',
-  description:
-    'Při vytváření nového vzhledu eshopu na platformě upgates jsem potřeboval pomocnou ruku. Design stránek a jejich kompletaci jsem nechal převážně na něm. Výsledky byly již za pár dní. Spolupráci můžu jen doporučit!',
-  author: {
-    name: 'Jaroslav Fajt',
-    position: 'Majitel eshopů Urban Master a Eco Spirit',
-  },
-  images: [
-    '/img_ecospirit_1.png',
-    '/img_ecospirit_2.png',
-    '/img_ecospirit_3.png',
-    '/img_ecospirit_4.png',
-    '/img_ecospirit_5.png',
-  ],
-};
+import { Motion } from '@/components/ui/motion';
+import { useTranslation } from 'react-i18next';
 
 const TestimonialsBase = () => {
+  const { t } = useTranslation();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const ecospirit = {
+    title: t('testimonials.ecospirit.title'),
+    description: t('testimonials.ecospirit.description'),
+    author: {
+      name: t('testimonials.ecospirit.author.name'),
+      position: t('testimonials.ecospirit.author.position'),
+    },
+    linkBtn: t('testimonials.ecospirit.linkBtn'),
+    images: [
+      '/img_ecospirit_1.png',
+      '/img_ecospirit_2.png',
+      '/img_ecospirit_3.png',
+      '/img_ecospirit_4.png',
+      '/img_ecospirit_5.png',
+    ],
+  };
 
   const handleNext = () => {
     setCurrentImageIndex((prevIndex) =>
@@ -61,7 +63,7 @@ const TestimonialsBase = () => {
                     href="https://www.ecospirit.cz"
                     target="_blank"
                     className="w-full h-full flex gap-2 items-center">
-                    Odkaz na eshop
+                    {ecospirit.linkBtn}
                     <FaExternalLinkAlt className="text-mintCream" />
                   </Link>
                 </button>
@@ -122,11 +124,13 @@ const TestimonialsBase = () => {
 };
 
 export default function Testimonials() {
+  const { t } = useTranslation();
+
   return (
     <div className="flex flex-col gap-5 max-w-full">
       <Motion direction="down" duration={0.3} delay={0.1}>
         <h1 className="text-5xl md:text-7xl font-bold mb-20 text-cambridgeBlue text-center">
-          Recenze klientů
+          {t('testimonials.title')}
         </h1>
       </Motion>
       <Motion direction="up" duration={0.5} delay={0.2}>

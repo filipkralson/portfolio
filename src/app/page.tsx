@@ -1,13 +1,13 @@
-import Header from '@/app/ui/components/Header';
-import About from '@/app/ui/components/About';
-import Stats from '@/app/ui/components/Stats';
-import ContentWrapper from './ui/contentWrapper';
-import SimpleParallax from '@/app/ui/components/SimpleParallax';
-import InfoCards from '@/app/ui/components/InfoCards';
-import LogoCarousel from '@/app/ui/components/LogoCarousel';
-import ContactForm from '@/app/ui/components/Contact';
-import Footer from '@/app/ui/components/Footer';
-import Testimonials from '@/app/ui/components/Testimonails';
+import Header from '@/components/Header';
+import About from '@/components/About';
+import Stats from '@/components/Stats';
+import ContentWrapper from '@/components/ui/contentWrapper';
+import SimpleParallax from '@/components/SimpleParallax';
+import InfoCards from '@/components/InfoCards';
+import LogoCarousel from '@/components/LogoCarousel';
+import ContactForm from '@/components/Contact';
+import Footer from '@/components/Footer';
+import Testimonials from '@/components/Testimonails';
 
 export default function Page() {
   return (

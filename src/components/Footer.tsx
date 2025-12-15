@@ -1,17 +1,22 @@
+'use client';
+
 import { FaInstagram, FaLinkedin, FaGithub } from 'react-icons/fa';
 import Link from 'next/link';
 
+import { useTranslation } from 'react-i18next';
+
 export default function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="flex md:flex-row flex-col md:justify-evenly items-center gap-10 bg-gray-800 text-white w-full p-10">
       <div className="md:w-3/4 flex justify-center">
         <p className="md:text-lg text-sm">
-          &copy; {new Date().getFullYear()} Filip Král. Všechna práva vyhrazena.
+          &copy; {new Date().getFullYear()} Filip Král. {t('footer.rights')}
         </p>
       </div>
 
       <div className="flex flex-col items-center gap-3">
-        <p className="text-lg opacity-50">Kontakt a sítě</p>
+        <p className="text-lg opacity-50">{t('footer.contact')}</p>
         <div className="flex flex-col gap-3">
           <div className="flex flex-row gap-3">
             <Link

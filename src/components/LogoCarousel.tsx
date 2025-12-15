@@ -24,7 +24,8 @@ import {
 } from 'react-icons/si';
 import { FaJava } from 'react-icons/fa';
 import { RiNextjsFill } from 'react-icons/ri';
-import { Motion } from '@/app/ui/motion';
+import { Motion } from '@/components/ui/motion';
+import { useTranslation } from 'react-i18next';
 
 type CardType = {
   icon: React.ElementType;
@@ -130,6 +131,7 @@ const Card = ({ card }: { card: CardType }) => {
 };
 
 export default function LogoCarousel() {
+  const { t } = useTranslation();
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -141,7 +143,7 @@ export default function LogoCarousel() {
     <section className="relative">
       <div className="flex justify-center items-center bg-viridian">
         <Motion direction="down" delay={0.1} duration={0.3}>
-          <h1 className="text-7xl font-bold p-10 text-mintCream">O čem něco vím...</h1>
+          <h1 className="text-7xl font-bold p-10 text-mintCream">{t('logoCarousel.title')}</h1>
         </Motion>
       </div>
       <div ref={targetRef} className="relative h-[300vh] bg-viridian">
