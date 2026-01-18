@@ -156,7 +156,6 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
                 }}
                 rows={4}
                 className="bg-tui-dim/40 border-2 border-tui-border outline-none px-3 py-2 w-full text-tui-text focus:border-tui-accent transition-all resize-none font-mono"
-                autoFocus
               />
             ) : (
               <input
@@ -170,7 +169,6 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
                   }
                 }}
                 className="bg-tui-dim/40 border-2 border-tui-border outline-none px-3 py-2 w-full text-tui-text focus:border-tui-accent transition-all font-mono"
-                autoFocus
               />
             )}
           </div>
