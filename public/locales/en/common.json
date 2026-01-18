@@ -1,0 +1,110 @@
+{
+  "titles": {
+    "hero": "whoami",
+    "skills": "skills.json",
+    "testimonials": "reviews.txt",
+    "services": "services.exe",
+    "stats": "competence.log",
+    "contact": "mailto:me@me.com"
+  },
+  "about": {
+    "title": "Filip Král",
+    "roles": [
+      "Frontend Enthusiast",
+      "Backend King ;)",
+      "Design Mason",
+      "Database Keeper",
+      "Design Visionary",
+      "Quick Learner"
+    ],
+    "alt": "My photo"
+  },
+  "infoCards": {
+    "title": "What I can help with...",
+    "web": {
+      "title": "Web Solutions",
+      "description": "I can help you build and maintain websites and applications. I have experience with design, implementation, and deployment of custom web solutions."
+    },
+    "design": {
+      "title": "Design",
+      "description": "UI/UX design, logo design, and branding are no strangers to me. I try to empathize with the ordinary user and anticipate what they would like best."
+    },
+    "brainstorming": {
+      "title": "Brainstorming",
+      "description": "I appreciate your feedback during our collaboration. I will help direct the solution in the right direction and avoid mistakes."
+    }
+  },
+  "stats": {
+    "educationTitle": "Education",
+    "experienceTitle": "Work Experience",
+    "otherProjects": "and more side projects...",
+    "education": [
+      {
+        "year": "2021-2024",
+        "text": "Technical University of Liberec",
+        "details": "Bc. - Faculty of Mechatronics"
+      },
+      {
+        "year": "2017-2021",
+        "text": "VOŠ, OA a SZŠ Domažlice",
+        "details": "Field: Information Technology"
+      }
+    ],
+    "jobs": [
+      {
+        "year": "2025 - Present",
+        "text": "Creator of tripplore mobile app",
+        "details": "A mobile travel app that uses AI to create a customized itinerary based on the user's requirements.",
+        "company": "tripplore",
+        "link": "https://tripplore.com"
+      },
+      {
+        "year": "2024 - Present",
+        "text": "Software Engineer",
+        "details": "Backend development focus. Design and implementation of new features in the Smart4City system.",
+        "company": "PragoData a.s.",
+        "link": "https://www.pragodata.com/"
+      }
+    ]
+  },
+  "testimonials": {
+    "title": "Client Reviews",
+    "ecospirit": {
+      "title": "E-shop Design & Assembly",
+      "description": "I needed a helping hand when creating a new look for my e-shop on the Upgates platform. I left the site design and assembly mainly to him. The results were ready in just a few days. I can only recommend the collaboration!",
+      "author": {
+        "name": "Jaroslav Fajt",
+        "position": "Owner of Urban Master & Eco Spirit"
+      },
+      "linkBtn": "Link to E-shop"
+    }
+  },
+  "contact": {
+    "terminal": {
+      "header": "contact@me.com",
+      "intro": "Hello! You have started a script to fill out the contact form. To send it successfully, please follow these steps:",
+      "step1": "First, enter your email address:",
+      "step2": "Next, enter your full name:",
+      "step3": "And finally, a brief description of what you are interested in:",
+      "enterHint": "...press ENTER to confirm...",
+      "emailError": "Please enter a valid email address containing '@'.",
+      "emptyError": "Field cannot be empty.",
+      "success": "Thank you, I will contact you as soon as possible. 🎉",
+      "error": "An error occurred while sending the message. Please try again.",
+      "unknownError": "An unknown error occurred.",
+      "sending": "Sending...",
+      "buttons": {
+        "submit": "Send",
+        "reset": "Reset"
+      },
+      "labels": {
+        "email": "~ Email:",
+        "name": "~ Full Name:",
+        "message": "~ Description:"
+      }
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved."
+  }
+}

@@ -1,95 +1,94 @@
-'use client';
+"use client";
 
-import { Motion } from '@/components/ui/motion';
-import { HiOutlineAcademicCap, HiOutlineBriefcase } from 'react-icons/hi';
-import { useTranslation } from 'react-i18next';
+import React from "react";
+import { useTranslation } from "react-i18next";
+import TerminalWindow from "./ui/TerminalWindow";
 
-type CardProps = {
+interface StatItem {
   year: string;
   text: string;
   details: string;
-};
-
-const CardStats = (props: CardProps) => {
-  return (
-    <div className="flex items-center justify-center text-viridian p-10 rounded-3xl border-2 border-mintGreen shadow-xl backdrop-blur-lg bg-opacity-40">
-      <div className="flex flex-col justify-start gap-6 w-full max-w-xl">
-        <div>
-          <p className="mb-1.5 text-lg font-light uppercase">{props.year}</p>
-          <hr className="border-viridian" />
-        </div>
-        <p className="max-w-lg text-2xl leading-relaxed">{props.text}</p>
-        <div>
-          <p className="mb-2.5 text-sm font-light uppercase">{props.details}</p>
-          <hr className="border-viridian" />
-        </div>
-      </div>
-    </div>
-  );
-};
+  company?: string;
+  institution?: string;
+  link: string;
+}
 
 export default function Stats() {
-  const { t } = useTranslation();
+  const { t } = useTranslation("common");
 
-  const highSchool = {
-    year: t('stats.highSchool.year'),
-    text: t('stats.highSchool.text'),
-    details: t('stats.highSchool.details'),
-  };
-
-  const university = {
-    year: t('stats.university.year'),
-    text: t('stats.university.text'),
-    details: t('stats.university.details'),
-  };
-
-  const job = {
-    year: t('stats.job.year'),
-    text: t('stats.job.text'),
-    details: t('stats.job.details'),
-  };
+  const education =
+    (t("stats.education", { returnObjects: true }) as StatItem[]) || [];
+  const jobs = (t("stats.jobs", { returnObjects: true }) as StatItem[]) || [];
 
   return (
-    <section className="relative w-full flex flex-col md:flex-row items-start justify-center gap-20">
-      <div className="flex flex-col items-center justify-center gap-10">
-        <Motion direction="down" duration={0.3} delay={0.1}>
-          <HiOutlineAcademicCap className="text-9xl text-mintGreen bg-viridian rounded-full p-5" />
-        </Motion>
-        <Motion direction="right" duration={0.3} delay={0.2}>
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-viridian">
-            {t('stats.education')}
-          </h2>
-        </Motion>
-
-        <div className="flex flex-col gap-8 w-full">
-          <Motion direction="right" duration={0.3} delay={0.3}>
-            <CardStats year={highSchool.year} text={highSchool.text} details={highSchool.details} />
-          </Motion>
-
-          <Motion direction="right" duration={0.3} delay={0.4}>
-            <CardStats year={university.year} text={university.text} details={university.details} />
-          </Motion>
+    <TerminalWindow title={t("titles.stats")} className="h-full">
+      <div className="font-mono text-sm space-y-4">
+        <div>
+          <h4 className="border-b border-tui-accent mb-2 text-tui-accent uppercase font-bold">
+            [{t("stats.experienceTitle")}]
+          </h4>
+          <div className="space-y-4">
+            {jobs.map((e, i) => (
+              <div
+                key={i}
+                className="pl-2 border-l-2 border-dashed border-tui-dim"
+              >
+                <div className="flex justify-between items-start gap-2">
+                  <span className="text-xs text-gray-500 whitespace-nowrap">
+                    {e.year}
+                  </span>
+                  {e.link && (
+                    <a
+                      href={e.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] text-tui-accent hover:underline opacity-70"
+                    >
+                      {e.company} ↗
+                    </a>
+                  )}
+                </div>
+                <p className="font-bold">{e.text}</p>
+                <p className="text-xs opacity-75">{e.details}</p>
+              </div>
+            ))}
+            <p className="text-xs text-tui-accent pl-2">
+              {t("stats.otherProjects")}
+            </p>
+          </div>
+        </div>
+        <div>
+          <h4 className="border-b border-tui-accent mb-2 text-tui-accent uppercase font-bold">
+            [{t("stats.educationTitle")}]
+          </h4>
+          <div className="space-y-4">
+            {education.map((e, i) => (
+              <div
+                key={i}
+                className="pl-2 border-l-2 border-dashed border-tui-dim"
+              >
+                <div className="flex justify-between items-start gap-2">
+                  <span className="text-xs text-gray-500 whitespace-nowrap">
+                    {e.year}
+                  </span>
+                  {e.link && (
+                    <a
+                      href={e.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] text-tui-accent hover:underline opacity-70"
+                    >
+                      {e.institution} ↗
+                    </a>
+                  )}
+                </div>
+                <p className="font-bold">{e.text}</p>
+                <p className="text-xs opacity-75">{e.details}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-
-      <div className="flex flex-col items-center justify-center gap-10">
-        <Motion direction="down" duration={0.3} delay={0.1}>
-          <HiOutlineBriefcase className="text-9xl text-mintGreen bg-viridian rounded-full p-5" />
-        </Motion>
-        <Motion direction="left" duration={0.3} delay={0.2}>
-          <h2 className="text-4xl md:text-6xl font-bold text-center text-viridian">
-            {t('stats.experience')}
-          </h2>
-        </Motion>
-        <div className="flex flex-col gap-8 w-full">
-          <Motion direction="left" duration={0.3} delay={0.3}>
-            <CardStats year={job.year} text={job.text} details={job.details} />
-          </Motion>
-          <Motion direction="left" duration={0.3} delay={0.4}>
-            <p className="text-viridian font-bold pl-5">{t('stats.otherProjects')}</p>
-          </Motion>
-        </div>
-      </div>
-    </section>
+    </TerminalWindow>
   );
 }

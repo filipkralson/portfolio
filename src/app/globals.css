@@ -1,7 +1,32 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-html {
-  scroll-behavior: smooth;
+@theme {
+  --color-tui-bg: #F6FFF8;
+  --color-tui-text: #000000;
+  --color-tui-accent: #6B9080;
+  --color-tui-border: #000000;
+  --color-tui-dim: #CCE3DE;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: var(--font-geist-mono), monospace;
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-tui-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-tui-border);
+  border: 1px solid var(--color-tui-bg);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-tui-accent);
 }
