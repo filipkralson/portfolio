@@ -1,42 +1,71 @@
 {
-  "header": {
-    "my": "Moje",
-    "portfolio": "portfolio..."
+  "titles": {
+    "hero": "kdojsem",
+    "skills": "nastroje.json",
+    "testimonials": "recenze.txt",
+    "services": "sluzby.exe",
+    "stats": "odbornost.log",
+    "contact": "mailto:me@me.cz"
+  },
+  "about": {
+    "title": "Filip Král",
+    "roles": [
+      "Frontendový nadšenec",
+      "Backendový Král ;)",
+      "Designový zedník",
+      "Databázový hospodář",
+      "Návrhový vizionář",
+      "Učenlivý člověk"
+    ],
+    "alt": "Moje fotka"
   },
   "infoCards": {
     "title": "S čím mohu pomoci...",
     "web": {
       "title": "Webová řešení",
-      "description": "Pomůžu Vám při vytváření a udržování webových stránek a aplikací. Mám zkušenosti s návrhem, implementací a nasazením webových řešení na míru. Vzdělávání a profesní seberozvoj je dá se říct mým každodenním chlebem."
+      "description": "Pomůžu Vám při vytváření a udržování webových stránek a aplikací. Mám zkušenosti s návrhem, implementací a nasazením webových řešení na míru."
     },
     "design": {
       "title": "Design",
-      "description": "Návrhy UI/UX, design log a brandingu mi nikdy nebyly cizí. Cit pro detail se u mě začal projevovat už při prvních projektech na střední škole a dále se prohlubuje. Snažím se vcítit do obyčeného uživatele a předpokládám, co by se mu líbilo nejvíce."
+      "description": "Návrhy UI/UX, design log a brandingu mi nikdy nebyly cizí. Snažím se vcítit do obyčeného uživatele a předpokládám, co by se mu líbilo nejvíce."
     },
     "brainstorming": {
       "title": "Brainstorming",
-      "description": "Při naší spolupráci budu rád za Váš feedback, nebráním se online, telefonním, tak i osobním schůzkám. Naoplátku Vám pomohu nasměrovat řešení správným směrem a předejít tak chybám."
+      "description": "Při naší spolupráci budu rád za Váš feedback. Pomohu nasměrovat řešení správným směrem a předejít tak chybám."
     }
   },
   "stats": {
-    "education": "Vzdělání",
-    "experience": "Pracovní zkušenosti",
+    "educationTitle": "Vzdělání",
+    "experienceTitle": "Pracovní zkušenosti",
     "otherProjects": "a další projekty do šuplíku...",
-    "highSchool": {
-      "year": "2017-2021",
-      "text": "VOŠ, OA a SZŠ Domažlice",
-      "details": "Obor: Informační technologie"
-    },
-    "university": {
-      "year": "2021-2024",
-      "text": "Technická univerzita v Liberci",
-      "details": "BC. - Fakulta mechatroniky a mezioborových studií, specializace Aplikovaná informatika"
-    },
-    "job": {
-      "year": "2024 - současnost",
-      "text": "Webový vývojář",
-      "details": "Vývoj převážně backendu."
-    }
+    "education": [
+      {
+        "year": "2021-2024",
+        "text": "Technická univerzita v Liberci",
+        "details": "Bc. - Fakulta mechatroniky"
+      },
+      {
+        "year": "2017-2021",
+        "text": "VOŠ, OA a SZŠ Domažlice",
+        "details": "Obor: Informační technologie"
+      }
+    ],
+    "jobs": [
+      {
+        "year": "2025 - současnost",
+        "text": "Tvůrce aplikace tripplore",
+        "details": "Mobilní aplikace pro cestování, která za pomoci AI vytváří na míru vytvořený initerář podle požadavků uživatele.",
+        "company": "tripplore",
+        "link": "https://tripplore.com"
+      },
+      {
+        "year": "2024 - současnost",
+        "text": "Software Engineer",
+        "details": "Vývoj převážně backendu. Návrh a implementace nových features v systému Smart4City.",
+        "company": "PragoData a.s.",
+        "link": "https://www.pragodata.com"
+      }
+    ]
   },
   "testimonials": {
     "title": "Recenze klientů",
@@ -67,27 +96,15 @@
       "buttons": {
         "submit": "Odeslat",
         "reset": "Obnovit"
+      },
+      "labels": {
+        "email": "~ Email:",
+        "name": "~ Jméno a příjmení:",
+        "message": "~ Popis:"
       }
     }
   },
-  "about": {
-    "title": "O mně",
-    "subtitle": "Mohl bych být něco jako...",
-    "roles": [
-      "Frontendový nadšenec.",
-      "Backendový Král ;).",
-      "Designový zedník.",
-      "Databázový hospodář.",
-      "Návrhový vizionář.",
-      "Učenlivý člověk."
-    ],
-    "alt": "Moje krásná fotka"
-  },
-  "logoCarousel": {
-    "title": "O čem něco vím..."
-  },
   "footer": {
-    "rights": "Všechna práva vyhrazena.",
-    "contact": "Kontakt a sítě"
+    "rights": "Všechna práva vyhrazena."
   }
 }

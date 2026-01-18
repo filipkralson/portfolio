@@ -1,17 +1,21 @@
-import type { Config } from 'tailwindcss';
+import type { Config } from "tailwindcss";
 
 export default {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
+  content: [
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+  ],
   theme: {
     extend: {
       colors: {
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        mintCream: '#F6FFF8',
-        mintGreen: '#CCE3DE',
-        azure: '#EAF4F4',
-        cambridgeBlue: '#A4C3B2',
-        viridian: '#6B9080',
+        tui: {
+          bg: "var(--background)",
+          text: "var(--foreground)",
+          accent: "var(--color-tui-accent)",
+          border: "var(--color-tui-border)",
+          dim: "var(--color-tui-dim)",
+        },
       },
     },
   },

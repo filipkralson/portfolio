@@ -1,37 +1,55 @@
-import Header from '@/components/Header';
-import About from '@/components/About';
-import Stats from '@/components/Stats';
-import ContentWrapper from '@/components/ui/contentWrapper';
-import SimpleParallax from '@/components/SimpleParallax';
-import InfoCards from '@/components/InfoCards';
-import LogoCarousel from '@/components/LogoCarousel';
-import ContactForm from '@/components/Contact';
-import Footer from '@/components/Footer';
-import Testimonials from '@/components/Testimonails';
+"use client";
 
-export default function Page() {
+import MainLayout from "@/components/MainLayout";
+import Hero from "@/components/Hero";
+import ContactForm from "@/components/ContactForm";
+import Services from "@/components/Services";
+import Stats from "@/components/Stats";
+import Skills from "@/components/Skills";
+import Testimonials from "@/components/Testimonials";
+import { useTranslation } from "react-i18next";
+
+export default function Home() {
+  const { t } = useTranslation("common");
+
   return (
-    <div className="bg-mintCream">
-      <SimpleParallax color="bg-mintGreen">
-        <Header />
-      </SimpleParallax>
-      <ContentWrapper>
-        <About />
-      </ContentWrapper>
-      <SimpleParallax color="bg-cambridgeBlue">
-        <InfoCards />
-      </SimpleParallax>
-      <ContentWrapper>
-        <Stats />
-      </ContentWrapper>
-      <LogoCarousel />
-      <ContentWrapper>
-        <Testimonials />
-      </ContentWrapper>
-      <ContentWrapper>
+    <MainLayout>
+      {/* Grid Layout Definition 
+          PC: 12 cols, 12 rows. 
+          Mobile: Flex col.
+      */}
+
+      {/* Row 1: Hero (Left) & Contact (Right) */}
+      <div className="md:col-span-6 md:row-span-5 w-full h-auto md:h-full">
+        <Hero />
+      </div>
+
+      <div className="md:col-span-6 md:row-span-5 w-full h-auto md:h-full">
         <ContactForm />
-      </ContentWrapper>
-      <Footer />
-    </div>
+      </div>
+
+      {/* Row 2: Info Cards */}
+      <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
+        <Services />
+      </div>
+
+      <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
+        <Stats />
+      </div>
+
+      <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
+        <Testimonials />
+      </div>
+
+      {/* Row 3: Skills / Footer */}
+      <div className="md:col-span-12 md:row-span-2 w-full h-auto md:h-full">
+        <Skills />
+      </div>
+
+      {/* Footer Text */}
+      <div className="md:hidden text-center text-xs opacity-50 pb-8">
+        {t("footer.rights")}
+      </div>
+    </MainLayout>
   );
 }
