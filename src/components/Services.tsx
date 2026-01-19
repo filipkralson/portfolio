@@ -32,18 +32,20 @@ export default function Services() {
       noPadding
       allowScroll={false}
     >
-      <div className="grid grid-cols-1 gap-4 h-full overflow-y-auto p-4">
+      <div className="grid grid-cols-1 gap-[1vh] h-full overflow-y-auto p-[1.5vh]">
         {services.map((s, i) => (
           <div
             key={i}
             className="border border-tui-dim p-4 bg-tui-dim/20 hover:bg-tui-dim/40 transition-colors flex gap-4 items-start"
           >
-            <s.icon className="text-4xl text-tui-accent shrink-0" />
+            <s.icon className="text-[4vh] max-text-4xl text-tui-accent shrink-0" />
             <div>
-              <h3 className="font-bold text-lg text-tui-text mb-1 underline decoration-tui-accent decoration-2 underline-offset-2">
+              <h3 className="font-bold text-[clamp(0.9rem,2vh,1.1rem)] text-tui-text mb-0.5 underline decoration-tui-accent decoration-2 underline-offset-2">
                 {s.title}
               </h3>
-              <p className="text-sm opacity-80">{s.description}</p>
+              <p className="text-[clamp(0.7rem,1.5vh,0.9rem)] opacity-80 leading-snug">
+                {s.description}
+              </p>
             </div>
           </div>
         ))}

@@ -22,7 +22,7 @@ export default function Stats() {
 
   return (
     <TerminalWindow title={t("titles.stats")} className="h-full">
-      <div className="font-mono text-sm space-y-4">
+      <div className="font-mono text-[clamp(0.7rem,1.4vh,0.9rem)] space-y-[1.5vh]">
         <div>
           <h4 className="border-b border-tui-accent mb-2 text-tui-accent uppercase font-bold">
             [{t("stats.experienceTitle")}]
@@ -42,14 +42,18 @@ export default function Stats() {
                       href={e.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] text-tui-accent hover:underline opacity-70"
+                      className="text-[clamp(0.6rem,1.2vh,0.75rem)] text-tui-accent hover:underline opacity-70"
                     >
                       {e.company} ↗
                     </a>
                   )}
                 </div>
-                <p className="font-bold">{e.text}</p>
-                <p className="text-xs opacity-75">{e.details}</p>
+                <p className="font-bold text-[clamp(0.8rem,1.6vh,1rem)] leading-tight">
+                  {e.text}
+                </p>
+                <p className="text-[clamp(0.7rem,1.3vh,0.8rem)] opacity-75">
+                  {e.details}
+                </p>
               </div>
             ))}
             <p className="text-xs text-tui-accent pl-2">
@@ -68,7 +72,7 @@ export default function Stats() {
                 className="pl-2 border-l-2 border-dashed border-tui-dim"
               >
                 <div className="flex justify-between items-start gap-2">
-                  <span className="text-xs text-gray-500 whitespace-nowrap">
+                  <span className="text-[clamp(0.6rem,1.2vh,0.75rem)] text-gray-500 whitespace-nowrap">
                     {e.year}
                   </span>
                   {e.link && (
@@ -76,14 +80,18 @@ export default function Stats() {
                       href={e.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] text-tui-accent hover:underline opacity-70"
+                      className="text-[clamp(0.6rem,1.2vh,0.75rem)] text-tui-accent hover:underline opacity-70"
                     >
                       {e.institution} ↗
                     </a>
                   )}
                 </div>
-                <p className="font-bold">{e.text}</p>
-                <p className="text-xs opacity-75">{e.details}</p>
+                <p className="font-bold text-[clamp(0.8rem,1.6vh,1rem)] leading-tight">
+                  {e.text}
+                </p>
+                <p className="text-[clamp(0.7rem,1.3vh,0.8rem)] opacity-75">
+                  {e.details}
+                </p>
               </div>
             ))}
           </div>

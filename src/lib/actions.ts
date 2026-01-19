@@ -24,7 +24,7 @@ export async function sendEmailAction(
 
   try {
     const data = await resend.emails.send({
-      from: "My portfolio",
+      from: "Portfolio <onboarding@resend.dev>",
       to: process.env.MY_EMAIL || "",
       subject: `Portfolio Contact from ${name}`,
       html: `

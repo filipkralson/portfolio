@@ -86,9 +86,9 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
   return (
     <div
       ref={scrollRef}
-      className="font-mono text-sm md:text-base space-y-4 h-full overflow-y-auto pr-2 scroll-smooth"
+      className="font-mono text-[clamp(0.7rem,1.5vh,1rem)] space-y-[1.5vh] h-full overflow-y-auto pr-2 scroll-smooth"
     >
-      <p className="font-bold text-tui-accent mb-4">
+      <p className="font-bold text-tui-accent mb-[1.5vh]">
         client@portfolio:~$ <span className="text-tui-text">./send.sh ⏎</span>
       </p>
 
@@ -129,17 +129,17 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
 
         {/* Dynamic Input Area */}
         {!state.success && step < 3 && (
-          <div className="flex flex-col gap-2 mt-4">
-            <div className="flex items-center gap-2">
+          <div className="flex flex-col gap-[1vh] mt-[1.5vh]">
+            <div className="flex items-center gap-[1vh]">
               <span className="text-tui-text font-bold">→</span>
-              <span className="opacity-70 whitespace-nowrap font-bold">
+              <span className="opacity-70 whitespace-nowrap font-bold text-[clamp(0.7rem,1.4vh,0.9rem)]">
                 {step === 0
                   ? t("contact.terminal.labels.email")
                   : step === 1
                     ? t("contact.terminal.labels.name")
                     : t("contact.terminal.labels.message")}
               </span>
-              <span className="text-xs opacity-50 hidden md:inline ml-auto italic">
+              <span className="text-[0.6rem] opacity-50 hidden md:inline ml-auto italic">
                 {t("contact.terminal.enterHint")}
               </span>
             </div>
@@ -154,8 +154,8 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
                     handleNextStep();
                   }
                 }}
-                rows={4}
-                className="bg-tui-dim/40 border-2 border-tui-border outline-none px-3 py-2 w-full text-tui-text focus:border-tui-accent transition-all resize-none font-mono"
+                rows={3}
+                className="bg-tui-dim/40 border-2 border-tui-border outline-none px-[1.5vh] py-[1vh] w-full text-tui-text focus:border-tui-accent transition-all resize-none font-mono"
               />
             ) : (
               <input
@@ -168,7 +168,7 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
                     handleNextStep();
                   }
                 }}
-                className="bg-tui-dim/40 border-2 border-tui-border outline-none px-3 py-2 w-full text-tui-text focus:border-tui-accent transition-all font-mono"
+                className="bg-tui-dim/40 border-2 border-tui-border outline-none px-[1.5vh] py-[0.8vh] w-full text-tui-text focus:border-tui-accent transition-all font-mono"
               />
             )}
           </div>
@@ -190,7 +190,7 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
               <button
                 type="submit"
                 disabled={isPending}
-                className="px-8 py-2 bg-tui-accent text-white hover:bg-white hover:text-tui-accent border-2 border-tui-accent transition-all font-bold cursor-pointer disabled:opacity-50"
+                className="px-[3vh] py-[1vh] bg-tui-accent text-white hover:bg-white hover:text-tui-accent border-2 border-tui-accent transition-all font-bold cursor-pointer disabled:opacity-50 text-[clamp(0.7rem,1.5vh,0.9rem)]"
               >
                 {isPending
                   ? t("contact.terminal.sending")
@@ -199,7 +199,7 @@ function InnerTerminalForm({ onReset }: { onReset: () => void }) {
             </form>
             <button
               onClick={onReset}
-              className="px-8 py-2 bg-tui-text text-white hover:bg-white hover:text-tui-text border-2 border-tui-text transition-all font-bold cursor-pointer"
+              className="px-[3vh] py-[1vh] bg-tui-text text-white hover:bg-white hover:text-tui-text border-2 border-tui-text transition-all font-bold cursor-pointer text-[clamp(0.7rem,1.5vh,0.9rem)]"
             >
               {t("contact.terminal.buttons.reset")}
             </button>
@@ -250,9 +250,7 @@ function StatusLine({
         {isDone ? "✔" : `${stepNum}.`} {label}
       </p>
       {isDone && (
-        <p className="ml-6 text-tui-accent font-bold wrap-break-word">
-          {value}
-        </p>
+        <p className="ml-6 text-tui-accent font-bold break-all">{value}</p>
       )}
     </div>
   );

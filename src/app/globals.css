@@ -9,8 +9,8 @@
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
+  color: var(--color-tui-text);
+  background: var(--color-tui-bg);
   font-family: var(--font-geist-mono), monospace;
 }
 

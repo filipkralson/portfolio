@@ -69,11 +69,11 @@ export default function Skills() {
       allowScroll={false}
     >
       <div className="bg-white h-full w-full overflow-x-auto flex items-center scrollbar-thin scrollbar-thumb-tui-accent scrollbar-track-transparent">
-        <div className="flex items-center gap-8 p-4 md:px-8 min-w-max mx-auto">
+        <div className="flex items-center gap-[4vh] p-[2vh] md:px-[4vh] min-w-max mx-auto">
           {icons.map((item, i) => (
             <item.icon
               key={i}
-              className="text-3xl text-tui-text hover:text-tui-accent transition-colors cursor-pointer shrink-0"
+              className="text-[3vh] max-text-4xl text-tui-text hover:text-tui-accent transition-colors cursor-pointer shrink-0"
             />
           ))}
         </div>
