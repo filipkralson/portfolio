@@ -6,7 +6,7 @@ import ContactForm from "@/components/ContactForm";
 import Services from "@/components/Services";
 import Stats from "@/components/Stats";
 import Skills from "@/components/Skills";
-import Testimonials from "@/components/Testimonials";
+import AboutMe from "@/components/AboutMe";
 import { useTranslation } from "react-i18next";
 
 export default function Home() {
@@ -30,15 +30,15 @@ export default function Home() {
 
       {/* Row 2: Info Cards */}
       <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
+        <AboutMe />
+      </div>
+
+      <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
         <Services />
       </div>
 
       <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
         <Stats />
-      </div>
-
-      <div className="md:col-span-4 md:row-span-5 w-full h-auto md:h-full">
-        <Testimonials />
       </div>
 
       {/* Row 3: Skills / Footer */}

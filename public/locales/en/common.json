@@ -2,7 +2,7 @@
   "titles": {
     "hero": "whoami",
     "skills": "skills.json",
-    "testimonials": "reviews.txt",
+    "aboutMe": "about_me.txt",
     "services": "services.exe",
     "stats": "competence.log",
     "contact": "mailto:me@me.com"
@@ -67,17 +67,36 @@
       }
     ]
   },
-  "testimonials": {
-    "title": "Client Reviews",
-    "ecospirit": {
-      "title": "E-shop Design & Assembly",
-      "description": "I needed a helping hand when creating a new look for my e-shop on the Upgates platform. I left the site design and assembly mainly to him. The results were ready in just a few days. I can only recommend the collaboration!",
-      "author": {
-        "name": "Jaroslav Fajt",
-        "position": "Owner of Urban Master & Eco Spirit"
-      },
-      "linkBtn": "Link to E-shop"
-    }
+  "aboutMe": {
+    "title": "A little bit about me...",
+    "description": "Improving myself and keeping up with trends is one of the most important parts of modern application development for me. Over time, I have become more inclined towards a product overview than coding itself. For me, that is now a smaller part of creating an application, especially with today's AI development. It is important to know the context, be able to make effective decisions, and accept the risks of possible choices. However, the desire to write a few lines of code will probably never leave me... :D"
+  },
+  "skillsData": {
+    "java": "Java",
+    "spring": "Spring",
+    "nodejs": "Node.js",
+    "python": "Python",
+    "flask": "Flask",
+    "html": "HTML5",
+    "css": "CSS3",
+    "typescript": "TypeScript",
+    "react": "React",
+    "nextjs": "Next.js",
+    "expo": "Expo",
+    "tailwind": "Tailwind CSS",
+    "figma": "Figma",
+    "googlecloud": "Google Cloud",
+    "supabase": "Supabase",
+    "fastify": "Fastify",
+    "vercel": "Vercel",
+    "docker": "Docker",
+    "mongodb": "MongoDB",
+    "mysql": "MySQL",
+    "postgresql": "PostgreSQL",
+    "linux": "Linux",
+    "git": "Git",
+    "postman": "Postman",
+    "swagger": "Swagger"
   },
   "contact": {
     "terminal": {

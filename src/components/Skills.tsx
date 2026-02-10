@@ -31,31 +31,31 @@ import TerminalWindow from "./ui/TerminalWindow";
 import { useTranslation } from "react-i18next";
 
 const icons = [
-  { icon: FaJava },
-  { icon: SiSpring },
-  { icon: SiNodedotjs },
-  { icon: SiPython },
-  { icon: SiFlask },
-  { icon: SiHtml5 },
-  { icon: SiCss3 },
-  { icon: SiTypescript },
-  { icon: SiReact },
-  { icon: RiNextjsFill },
-  { icon: SiExpo },
-  { icon: SiTailwindcss },
-  { icon: SiFigma },
-  { icon: SiGooglecloud },
-  { icon: SiSupabase },
-  { icon: SiFastify },
-  { icon: SiVercel },
-  { icon: SiDocker },
-  { icon: SiMongodb },
-  { icon: SiMysql },
-  { icon: SiPostgresql },
-  { icon: SiLinux },
-  { icon: SiGit },
-  { icon: SiPostman },
-  { icon: SiSwagger },
+  { icon: FaJava, name: "java" },
+  { icon: SiSpring, name: "spring" },
+  { icon: SiNodedotjs, name: "nodejs" },
+  { icon: SiPython, name: "python" },
+  { icon: SiFlask, name: "flask" },
+  { icon: SiHtml5, name: "html" },
+  { icon: SiCss3, name: "css" },
+  { icon: SiTypescript, name: "typescript" },
+  { icon: SiReact, name: "react" },
+  { icon: RiNextjsFill, name: "nextjs" },
+  { icon: SiExpo, name: "expo" },
+  { icon: SiTailwindcss, name: "tailwind" },
+  { icon: SiFigma, name: "figma" },
+  { icon: SiGooglecloud, name: "googlecloud" },
+  { icon: SiSupabase, name: "supabase" },
+  { icon: SiFastify, name: "fastify" },
+  { icon: SiVercel, name: "vercel" },
+  { icon: SiDocker, name: "docker" },
+  { icon: SiMongodb, name: "mongodb" },
+  { icon: SiMysql, name: "mysql" },
+  { icon: SiPostgresql, name: "postgresql" },
+  { icon: SiLinux, name: "linux" },
+  { icon: SiGit, name: "git" },
+  { icon: SiPostman, name: "postman" },
+  { icon: SiSwagger, name: "swagger" },
 ];
 
 export default function Skills() {
@@ -73,6 +73,7 @@ export default function Skills() {
           {icons.map((item, i) => (
             <item.icon
               key={i}
+              title={t(`skillsData.${item.name}`)}
               className="text-[3vh] max-text-4xl text-tui-text hover:text-tui-accent transition-colors cursor-pointer shrink-0"
             />
           ))}

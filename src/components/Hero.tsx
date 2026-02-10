@@ -3,9 +3,12 @@
 import Image from "next/image";
 import { ReactTyped } from "react-typed";
 import { useTranslation } from "react-i18next";
-import "@/i18n";
-import LanguageSwitch from "./LanguageSwitch";
+import dynamic from "next/dynamic";
 import TerminalWindow from "./ui/TerminalWindow";
+
+const LanguageSwitch = dynamic(() => import("./LanguageSwitch"), {
+  ssr: false,
+});
 
 export default function Hero() {
   const { t } = useTranslation("common");

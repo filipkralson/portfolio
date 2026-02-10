@@ -2,7 +2,7 @@
   "titles": {
     "hero": "kdojsem",
     "skills": "nastroje.json",
-    "testimonials": "recenze.txt",
+    "aboutMe": "o_mne.txt",
     "services": "sluzby.exe",
     "stats": "odbornost.log",
     "contact": "mailto:me@me.cz"
@@ -67,17 +67,36 @@
       }
     ]
   },
-  "testimonials": {
-    "title": "Recenze klientů",
-    "ecospirit": {
-      "title": "Design, grafika a kompletace eshopu",
-      "description": "Při vytváření nového vzhledu eshopu na platformě upgates jsem potřeboval pomocnou ruku. Design stránek a jejich kompletaci jsem nechal převážně na něm. Výsledky byly již za pár dní. Spolupráci můžu jen doporučit!",
-      "author": {
-        "name": "Jaroslav Fajt",
-        "position": "Majitel eshopů Urban Master a Eco Spirit"
-      },
-      "linkBtn": "Odkaz na eshop"
-    }
+  "aboutMe": {
+    "title": "Něco málo o mně...",
+    "description": "Zdokonalovat se a jít s trendy je pro mě jedna z nejdůležitějších součástí moderního vývoje aplikací. Postupem času se více přikláním spíše k produktovému nadhledu, než samotnému kódování. To už je pro mě ta menší část při tvorbě aplikace, obzvlášť při dnešnímu AI vývoji. Důležité je znát kontext, dokázat se efektivně rozhodovat a přijmout rizika možných voleb. Nicméně chuť napsat si pár řádek kódu mě asi nikdy neopustí... :D"
+  },
+  "skillsData": {
+    "java": "Java",
+    "spring": "Spring",
+    "nodejs": "Node.js",
+    "python": "Python",
+    "flask": "Flask",
+    "html": "HTML5",
+    "css": "CSS3",
+    "typescript": "TypeScript",
+    "react": "React",
+    "nextjs": "Next.js",
+    "expo": "Expo",
+    "tailwind": "Tailwind CSS",
+    "figma": "Figma",
+    "googlecloud": "Google Cloud",
+    "supabase": "Supabase",
+    "fastify": "Fastify",
+    "vercel": "Vercel",
+    "docker": "Docker",
+    "mongodb": "MongoDB",
+    "mysql": "MySQL",
+    "postgresql": "PostgreSQL",
+    "linux": "Linux",
+    "git": "Git",
+    "postman": "Postman",
+    "swagger": "Swagger"
   },
   "contact": {
     "terminal": {

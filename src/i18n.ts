@@ -15,6 +15,7 @@ i18n
     ),
   )
   .init({
+    lng: "cs",
     fallbackLng: "cs",
     debug: false,
     interpolation: {

@@ -28,7 +28,7 @@ export default function ContactForm() {
     <TerminalWindow
       key={resetKey}
       title={t("titles.contact")}
-      className="h-full bg-white border-tui-border text-tui-text"
+      className="h-full bg-tui-bg border-tui-border text-tui-text"
     >
       <InnerTerminalForm onReset={handleHardReset} />
     </TerminalWindow>
